@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+	xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+	<changeSet id="2" author="ramesh">
+		<addColumn schemaName="public" tableName="users">
+			<column name="comment" type="varchar(150)" />
+		</addColumn>
+	</changeSet>
+	<changeSet author="ramesh" id="3">
+		<addAutoIncrement columnDataType="int"
+			columnName="id" incrementBy="1" schemaName="public" startWith="1"
+			tableName="users" />
+	</changeSet>
+	<changeSet author="ramesh" id="4">
+		<createSequence cycle="true" incrementBy="1"
+			schemaName="public"
+			sequenceName="HIBERNATE_SEQUENCE" startValue="1" />
+	</changeSet>
+	
+</databaseChangeLog>
+         
